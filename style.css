@@ -1,0 +1,65 @@
+/* ============ GENERAL CSS RESET ================ */
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove text decoration on links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Reset form elements */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+/* Ensure consistent body styles */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Set images to scale properly */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
