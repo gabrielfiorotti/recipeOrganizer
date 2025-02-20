@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Remove list styles */
@@ -42,6 +43,7 @@ body {
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: bisque;
 }
 
 /* Set images to scale properly */
@@ -62,4 +64,41 @@ h5,
 h6 {
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+/* ============= HEADER ================= */
+header {
+  background-color: #ff8800;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+header > img {
+  max-width: 200px;
+}
+
+#btn-header {
+  cursor: pointer;
+}
+
+.nav-links {
+}
+
+.closed {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  color: black;
+  position: absolute;
 }
