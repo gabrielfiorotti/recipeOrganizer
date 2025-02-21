@@ -106,9 +106,9 @@ header > img {
 
 /* =================== MAIN ===================== */
 
-/* main {
-  height: 85vh;
-} */
+main {
+  min-height: 80vh;
+}
 
 .control-bar {
   padding: 1rem;
@@ -148,7 +148,7 @@ form > label {
 
 .card {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 85vw;
   padding: 1rem;
   border: 1px solid black;
@@ -157,6 +157,7 @@ form > label {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   margin: 0 auto;
   cursor: pointer;
+  gap: 10px;
 }
 
 .card-img {
@@ -168,6 +169,7 @@ form > label {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 160px;
 }
 
 .card-info > h2 {

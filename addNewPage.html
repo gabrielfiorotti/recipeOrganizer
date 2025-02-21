@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Organizer</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./addNew.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/logo-white.svg" alt="Logo" />
+      <nav>
+        <img
+          src="./assets/icon-menu.svg"
+          alt="button to open menu"
+          id="btn-header"
+        />
+        <ul id="nav-links" class="closed">
+          <a href="./index.html"><li>Recipes</li></a>
+          <a href="./favoritesPage.html"><li>Favorites</li></a>
+          <a href="./addNewPage.html"><li>Add New</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- <div>
+        <h2>Add a new recipe:</h2>
+        <form action="">
+          <label for="">
+            Dish Name:
+            <input type="text" />
+          </label>
+          <label for="">
+            Ingredients:
+            <input type="text" />
+          </label>
+          <label for="">
+            Meal Type:
+            <input type="text" />
+          </label>
+          <label for="">
+            Time to cook:
+            <input type="text" />
+          </label>
+          <button>Add</button>
+        </form>
+      </div> -->
+      <h2>Add a new recipe:</h2>
+      <form id="recipe-form">
+        <label
+          >Recipe Name:
+          <input
+            type="text"
+            id="recipe-name"
+            placeholder="Recipe Name"
+            required
+          />
+        </label>
+
+        <label>
+          Meal Type:
+          <select id="mealType" required>
+            <option disabled selected>--Select--</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+          </select>
+        </label>
+
+        <label>
+          Ingredients:
+          <textarea
+            id="ingredients"
+            placeholder="Ingredients"
+            required
+          ></textarea>
+        </label>
+
+        <label>
+          Instructions:
+          <textarea
+            id="instructions"
+            placeholder="Instructions"
+            required
+          ></textarea>
+        </label>
+
+        <label>
+          Photo:
+          <input type="file" id="recipe-image" accept="image/*" required />
+        </label>
+        <button type="submit">Submit Recipe</button>
+      </form>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
+    <script defer src="./script.js"></script>
+    <script defer src="./db-AddNewPage.js"></script>
+    <footer>
+      <p>Designed and Developed by Gabriel Fiorotti</p>
+    </footer>
+  </body>
+</html>

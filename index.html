@@ -18,8 +18,8 @@
         />
         <ul id="nav-links" class="closed">
           <a href="./index.html"><li>Recipes</li></a>
-          <a href="./favorites.html"><li>Favorites</li></a>
-          <a href="./addNew.html"><li>Add New</li></a>
+          <a href="./favoritesPage.html"><li>Favorites</li></a>
+          <a href="./addNewPage.html"><li>Add New</li></a>
         </ul>
       </nav>
     </header>
@@ -37,35 +37,23 @@
           <label>
             Meal Type:
             <select name="" id="">
-              <option value="">All</option>
-              <option value="breakfast">Breakfast</option>
-              <option value="lunch">Lunch</option>
-              <option value="dinner">Dinner</option>
-              <option value="snack">Snack</option>
+              <option value="All">All</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Snack">Snack</option>
             </select>
           </label>
           <button type="submit" class="btn-filter">Filter</button>
         </form>
       </div>
-      <div id="recipes-container">
-        <!-- <div class="card">
-          <img
-            src="./assets/dish1.jpg"
-            alt="fettuccine alfredo"
-            class="card-img"
-          />
-          <div class="card-info">
-            <h2>Fettuccine Alfredo</h2>
-            <p>Dinner</p>
-          </div>
-          <img src="./assets/star.svg" alt="star" class="card-star" />
-        </div> -->
-      </div>
+      <div id="recipes-container"></div>
     </main>
     <!-- Firebase Browser-Compatible CDN -->
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
     <script defer src="./script.js"></script>
+    <script defer src="./db-index.js"></script>
     <footer>
       <p>Designed and Developed by Gabriel Fiorotti</p>
     </footer>
