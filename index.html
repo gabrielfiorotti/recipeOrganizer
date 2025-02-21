@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Organizer</title>
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+    <!-- <script defer src="./script.js" type="module"></script> -->
   </head>
   <body>
     <header>
@@ -17,9 +17,9 @@
           id="btn-header"
         />
         <ul id="nav-links" class="closed">
-          <li>Recipes</li>
-          <li>Favorites</li>
-          <li>Add New</li>
+          <a href="./index.html"><li>Recipes</li></a>
+          <a href="./favorites.html"><li>Favorites</li></a>
+          <a href="./addNew.html"><li>Add New</li></a>
         </ul>
       </nav>
     </header>
@@ -47,8 +47,8 @@
           <button type="submit" class="btn-filter">Filter</button>
         </form>
       </div>
-      <div class="cards-container">
-        <div class="card">
+      <div id="recipes-container">
+        <!-- <div class="card">
           <img
             src="./assets/dish1.jpg"
             alt="fettuccine alfredo"
@@ -59,57 +59,13 @@
             <p>Dinner</p>
           </div>
           <img src="./assets/star.svg" alt="star" class="card-star" />
-        </div>
-        <div class="card">
-          <img
-            src="./assets/dish1.jpg"
-            alt="fettuccine alfredo"
-            class="card-img"
-          />
-          <div class="card-info">
-            <h2>Fettuccine Alfredo</h2>
-            <p>Dinner</p>
-          </div>
-          <img src="./assets/star.svg" alt="star" class="card-star" />
-        </div>
-        <div class="card">
-          <img
-            src="./assets/dish1.jpg"
-            alt="fettuccine alfredo"
-            class="card-img"
-          />
-          <div class="card-info">
-            <h2>Fettuccine Alfredo</h2>
-            <p>Dinner</p>
-          </div>
-          <img src="./assets/star.svg" alt="star" class="card-star" />
-        </div>
-        <div class="card">
-          <img
-            src="./assets/dish1.jpg"
-            alt="fettuccine alfredo"
-            class="card-img"
-          />
-          <div class="card-info">
-            <h2>Fettuccine Alfredo</h2>
-            <p>Dinner</p>
-          </div>
-          <img src="./assets/star.svg" alt="star" class="card-star" />
-        </div>
-        <div class="card">
-          <img
-            src="./assets/dish1.jpg"
-            alt="fettuccine alfredo"
-            class="card-img"
-          />
-          <div class="card-info">
-            <h2>Fettuccine Alfredo</h2>
-            <p>Dinner</p>
-          </div>
-          <img src="./assets/star.svg" alt="star" class="card-star" />
-        </div>
+        </div> -->
       </div>
     </main>
+    <!-- Firebase Browser-Compatible CDN -->
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
+    <script defer src="./script.js"></script>
     <footer>
       <p>Designed and Developed by Gabriel Fiorotti</p>
     </footer>
