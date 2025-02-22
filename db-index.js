@@ -1,4 +1,4 @@
-// ======== DATABASE =====================/
+// ===================== DATABASE CONFIG ===================== //
 
 const firebaseConfig = {
   apiKey: "AIzaSyAQVcuh2XO86wlr8EnCi4-65HPRzQ76ijg",
@@ -13,35 +13,39 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+// ===================== DB INTERACTION BASED ON THE PAGE NEEDS ===================== //
+
+let allRecipes = []; // Store all fetched recipes
+let filteredRecipes = []; // Store filtered recipes
+
 // Fetch and display recipes
 async function fetchRecipes() {
   const recipesContainer = document.getElementById("recipes-container");
   recipesContainer.innerHTML = "<p>Loading...</p>";
 
+  console.log("all: ", allRecipes);
+  console.log(filteredRecipes);
   try {
-    const querySnapshot = await db.collection("recipes").get();
+    if (allRecipes.length === 0) {
+      const querySnapshot = await db.collection("recipes").get();
+      allRecipes = querySnapshot.docs.map((doc) => doc.data());
+    }
+
+    const filteredValue = document.getElementById("selectInput").value;
+    filteredRecipes =
+      filteredValue === "All" || !filteredValue
+        ? allRecipes
+        : allRecipes.filter((recipe) => recipe.mealType === filteredValue);
+
     recipesContainer.innerHTML = "";
 
-    querySnapshot.forEach((doc) => {
-      const recipe = doc.data();
-      const recipeCard = document.createElement("div");
-      recipeCard.classList.add("card");
-
-      console.log(recipe.imageURL);
-      recipeCard.innerHTML = `
-            <img src="${recipe.imageURL}" alt="${recipe.name}" class="card-img" crossorigin="anonymous"/>
-            <div class="card-info">
-              <h2>${recipe.name}</h2>
-              <p>${recipe.mealType}</p>
-            </div>
-            <img src="./assets/star.svg" alt="star" class="card-star" />
-          `;
-
-      recipesContainer.appendChild(recipeCard);
-    });
-
-    if (querySnapshot.empty) {
+    if (filteredRecipes.length === 0) {
       recipesContainer.innerHTML = "<p>No recipes found.</p>";
+    } else {
+      filteredRecipes.forEach((recipe) => {
+        const recipeCard = createRecipeCard(recipe);
+        recipesContainer.appendChild(recipeCard);
+      });
     }
   } catch (error) {
     recipesContainer.innerHTML = `<p>Error loading recipes: ${error.message}</p>`;
@@ -49,5 +53,30 @@ async function fetchRecipes() {
   }
 }
 
+// Generate a recipe card
+function createRecipeCard(recipe) {
+  const recipeCard = document.createElement("div");
+  recipeCard.classList.add("card");
+  recipeCard.innerHTML = `
+    <img src="${recipe.imageURL}" alt="${recipe.name}" class="card-img" crossorigin="anonymous"/>
+    <div class="card-info">
+      <h2>${recipe.name}</h2>
+      <p>${recipe.mealType}</p>
+    </div>
+    <img src="./assets/star.svg" alt="star" class="card-star" />
+  `;
+  return recipeCard;
+}
+
 // Fetch recipes on page load
 fetchRecipes();
+
+// ================= FILTER RECIPES BY TYPE ===================== //
+
+//handle form submission
+const formFilter = document.getElementById("form-filter");
+
+formFilter.addEventListener("submit", function (event) {
+  event.preventDefault();
+  fetchRecipes();
+});

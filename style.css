@@ -126,7 +126,7 @@ form > label {
   color: white;
 }
 
-.btn-filter {
+#btn-filter {
   width: 50px;
   padding: 0.35rem;
   background-color: white;
@@ -188,4 +188,5 @@ footer {
   background-color: #a15600;
   color: white;
   margin-top: 1rem;
+  overflow: hidden;
 }

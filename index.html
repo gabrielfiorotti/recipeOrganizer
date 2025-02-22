@@ -25,18 +25,10 @@
     </header>
     <main>
       <div class="control-bar">
-        <form action="">
-          <!-- <label
-            >Ingredient:
-            <select name="" id="">
-              <option value="">--Select--</option>
-              <option value="">Tomato</option>
-              <option value="">Onion</option>
-            </select>
-          </label> -->
+        <form id="form-filter">
           <label>
             Meal Type:
-            <select name="" id="">
+            <select name="" id="selectInput">
               <option value="All">All</option>
               <option value="Breakfast">Breakfast</option>
               <option value="Lunch">Lunch</option>
@@ -44,7 +36,7 @@
               <option value="Snack">Snack</option>
             </select>
           </label>
-          <button type="submit" class="btn-filter">Filter</button>
+          <button type="submit" id="btn-filter">Filter</button>
         </form>
       </div>
       <div id="recipes-container"></div>
