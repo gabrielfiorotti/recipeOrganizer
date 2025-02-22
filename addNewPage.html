@@ -24,75 +24,42 @@
       </nav>
     </header>
     <main>
-      <!-- <div>
+      <div class="page-container">
         <h2>Add a new recipe:</h2>
-        <form action="">
-          <label for="">
-            Dish Name:
-            <input type="text" />
+        <form id="recipe-form">
+          <label
+            >Recipe Name:
+            <input type="text" id="recipe-name" required />
           </label>
-          <label for="">
-            Ingredients:
-            <input type="text" />
-          </label>
-          <label for="">
+
+          <label>
             Meal Type:
-            <input type="text" />
+            <select id="mealType" required>
+              <option disabled selected>--Select--</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Snack">Snack</option>
+            </select>
           </label>
-          <label for="">
-            Time to cook:
-            <input type="text" />
+
+          <label>
+            Ingredients:
+            <textarea id="ingredients" required></textarea>
           </label>
-          <button>Add</button>
+
+          <label>
+            Instructions:
+            <textarea id="instructions" required></textarea>
+          </label>
+
+          <label>
+            Photo:
+            <input type="file" id="recipe-image" accept="image/*" required />
+          </label>
+          <button type="submit">Submit Recipe</button>
         </form>
-      </div> -->
-      <h2>Add a new recipe:</h2>
-      <form id="recipe-form">
-        <label
-          >Recipe Name:
-          <input
-            type="text"
-            id="recipe-name"
-            placeholder="Recipe Name"
-            required
-          />
-        </label>
-
-        <label>
-          Meal Type:
-          <select id="mealType" required>
-            <option disabled selected>--Select--</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Snack">Snack</option>
-          </select>
-        </label>
-
-        <label>
-          Ingredients:
-          <textarea
-            id="ingredients"
-            placeholder="Ingredients"
-            required
-          ></textarea>
-        </label>
-
-        <label>
-          Instructions:
-          <textarea
-            id="instructions"
-            placeholder="Instructions"
-            required
-          ></textarea>
-        </label>
-
-        <label>
-          Photo:
-          <input type="file" id="recipe-image" accept="image/*" required />
-        </label>
-        <button type="submit">Submit Recipe</button>
-      </form>
+      </div>
     </main>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
