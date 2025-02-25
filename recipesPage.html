@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Organizer</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./addNew.css" />
+    <link rel="stylesheet" href="./recipesPage.css" />
   </head>
   <body>
     <header>
@@ -24,47 +24,28 @@
       </nav>
     </header>
     <main>
-      <div class="page-container">
-        <h2>Add a new recipe:</h2>
-        <form id="recipe-form">
-          <label
-            >Recipe Name:
-            <input type="text" id="recipe-name" required />
-          </label>
-
+      <div class="control-bar">
+        <form id="form-filter">
           <label>
             Meal Type:
-            <select id="mealType" required>
-              <option disabled selected>--Select--</option>
+            <select name="" id="selectInput">
+              <option value="All">All</option>
               <option value="Breakfast">Breakfast</option>
               <option value="Lunch">Lunch</option>
               <option value="Dinner">Dinner</option>
               <option value="Snack">Snack</option>
             </select>
           </label>
-
-          <label>
-            Ingredients:
-            <textarea id="ingredients" required></textarea>
-          </label>
-
-          <label>
-            Instructions:
-            <textarea id="instructions" required></textarea>
-          </label>
-
-          <label>
-            Photo:
-            <input type="file" id="recipe-image" accept="image/*" required />
-          </label>
-          <button type="submit">Submit Recipe</button>
+          <button type="submit" id="btn-filter">Filter</button>
         </form>
       </div>
+      <div id="recipes-container"></div>
     </main>
+    <!-- Firebase Browser-Compatible CDN -->
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
     <script defer src="./script.js"></script>
-    <script defer src="./db-AddNewPage.js"></script>
+    <script defer src="./db-RecipesPage.js"></script>
     <footer>
       <p>Designed and Developed by</p>
     </footer>

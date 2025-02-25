@@ -32,7 +32,6 @@ async function uploadImageToImgBB(file) {
   }
 
   const imageDirectLink = data.data.url;
-  console.log("Direct Image URL:", imageDirectLink);
 
   return imageDirectLink;
 }
@@ -74,6 +73,8 @@ document
       document.getElementById("recipe-form").reset();
     } catch (error) {
       console.error("Error uploading image or saving recipe:", error);
-      alert("Failed to add recipe. Please try again.");
+      alert(
+        "Failed to add recipe. Please try again. \n Note: you must be logged in to add a new recipe."
+      );
     }
   });

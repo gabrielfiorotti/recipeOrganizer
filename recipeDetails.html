@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Recipe Organizer</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="./recipeDetials.css" />
   </head>
   <body>
     <header>
@@ -24,16 +24,15 @@
       </nav>
     </header>
     <main>
-      <div class="login-container">
-        <h2>Welcome!</h2>
-        <button id="google-signin-btn">Sign in with Google</button>
+      <div id="recipe-details">
+        <p>Loading recipe...</p>
       </div>
     </main>
     <!-- Firebase Browser-Compatible CDN -->
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
     <script defer src="./script.js"></script>
-    <script defer src="./login.js"></script>
+    <script defer src="./db-RecipeDetails.js"></script>
     <footer>
       <p>Designed and Developed by</p>
     </footer>

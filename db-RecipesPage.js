@@ -23,12 +23,14 @@ async function fetchRecipes() {
   const recipesContainer = document.getElementById("recipes-container");
   recipesContainer.innerHTML = "<p>Loading...</p>";
 
-  console.log("all: ", allRecipes);
-  console.log(filteredRecipes);
   try {
     if (allRecipes.length === 0) {
       const querySnapshot = await db.collection("recipes").get();
-      allRecipes = querySnapshot.docs.map((doc) => doc.data());
+      // Include the document id along with the recipe data
+      allRecipes = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
     }
 
     const filteredValue = document.getElementById("selectInput").value;
@@ -43,6 +45,7 @@ async function fetchRecipes() {
       recipesContainer.innerHTML = "<p>No recipes found.</p>";
     } else {
       filteredRecipes.forEach((recipe) => {
+        // Pass the recipe id to the card creator
         const recipeCard = createRecipeCard(recipe);
         recipesContainer.appendChild(recipeCard);
       });
@@ -58,13 +61,19 @@ function createRecipeCard(recipe) {
   const recipeCard = document.createElement("div");
   recipeCard.classList.add("card");
   recipeCard.innerHTML = `
-    <img src="${recipe.imageURL}" alt="${recipe.name}" class="card-img" crossorigin="anonymous"/>
+    <img src="${recipe.imageURL}" alt="${recipe.name}" class="card-img"/>
     <div class="card-info">
       <h2>${recipe.name}</h2>
       <p>${recipe.mealType}</p>
     </div>
     <img src="./assets/star.svg" alt="star" class="card-star" />
   `;
+
+  // When a card is clicked, go to the details page with the recipe's id
+  recipeCard.addEventListener("click", () => {
+    window.location.href = `recipeDetails.html?recipeId=${recipe.id}`;
+  });
+
   return recipeCard;
 }
 
