@@ -40,6 +40,14 @@
         </form>
       </div>
       <div id="recipes-container"></div>
+      <div id="chatBtn">
+        <img src="./assets/chatAI.svg" alt="chat icon" />
+      </div>
+      <div id="chatbot-container">
+        <div id="chat-history"></div>
+        <input type="text" id="chat-input" />
+        <button id="send-btn">Send</button>
+      </div>
     </main>
     <!-- Firebase Browser-Compatible CDN -->
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
@@ -47,7 +55,7 @@
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
     <script defer src="./script.js"></script>
     <script defer src="./firebase.js"></script>
-    <script defer src="./db-RecipesPage.js"></script>
+    <script defer src="./db-RecipesPage.js" type="module"></script>
     <footer>
       <p>Designed and Developed by</p>
     </footer>
