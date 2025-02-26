@@ -1,5 +1,3 @@
-const recommended = require("eslint/conf/eslint-recommended");
-
 module.exports = [
   {
     languageOptions: {
@@ -12,7 +10,6 @@ module.exports = [
       },
     },
     rules: {
-      ...recommended.rules,
       "no-unused-vars": "warn",
       "no-console": "off",
     },
