@@ -1,3 +1,5 @@
+const recommended = require("eslint/conf/eslint-recommended");
+
 module.exports = [
   {
     languageOptions: {
@@ -7,11 +9,10 @@ module.exports = [
         window: "readonly",
         document: "readonly",
         console: "readonly",
-        // Add any other global variables your app relies on.
       },
     },
-    extends: ["eslint:recommended"],
     rules: {
+      ...recommended.rules,
       "no-unused-vars": "warn",
       "no-console": "off",
     },
