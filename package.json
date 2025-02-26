@@ -1,5 +1,15 @@
 {
+  "name": "recipes-app",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "echo \"No tests specified\"",
+    "build": "echo \"No build step required\""
+  },
   "dependencies": {
     "@google/generative-ai": "^0.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.21.0"
   }
 }
