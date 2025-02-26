@@ -13,13 +13,8 @@ const db = firebase.firestore();
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    // The user is signed in.
     console.log("User is logged in:", user);
-    // You can store user details in a global variable or update the UI accordingly.
   } else {
-    // No user is signed in.
     console.log("User is not logged in");
-    // Optionally, redirect to the login page:
-    //window.location.href = "login.html";
   }
 });

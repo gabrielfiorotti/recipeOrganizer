@@ -25,7 +25,6 @@ if (recipeId) {
     "<p>No recipe selected.</p>";
 }
 
-// Function to display recipe details and attach event handlers
 function displayRecipe(recipe) {
   const container = document.getElementById("recipe-details");
   container.innerHTML = `
@@ -96,7 +95,6 @@ function displayRecipe(recipe) {
         instructions: newInstructions,
       })
       .then(() => {
-        // Update the display with the new values
         document.getElementById("ingredients-display").innerText =
           newIngredients;
         document.getElementById("instructions-display").innerText =
@@ -129,7 +127,6 @@ function displayRecipe(recipe) {
         .delete()
         .then(() => {
           alert("Recipe deleted successfully!");
-          // Redirect to the recipes list page after deletion
           window.location.href = "recipesPage.html";
         })
         .catch((error) => {
@@ -147,7 +144,6 @@ function displayRecipe(recipe) {
       return;
     }
 
-    // Define the path for the user's favorites subcollection
     db.collection("users")
       .doc(user.uid)
       .collection("favorites")

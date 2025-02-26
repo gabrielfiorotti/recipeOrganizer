@@ -1,4 +1,3 @@
-//function to upload img and return a URL to the img
 async function uploadImageToImgBB(file) {
   const formData = new FormData();
   formData.append("image", file);
@@ -12,7 +11,6 @@ async function uploadImageToImgBB(file) {
   );
 
   const data = await response.json();
-  console.log("ImgBB Response:", data); // Debugging
 
   if (!data.success) {
     throw new Error("Failed to upload image to ImgBB");
@@ -23,11 +21,11 @@ async function uploadImageToImgBB(file) {
   return imageDirectLink;
 }
 
-// Function to handle form submission
+// handle form submission
 document
   .getElementById("recipe-form")
   .addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     const name = document.getElementById("recipe-name").value;
     const ingredients = document.getElementById("ingredients").value;

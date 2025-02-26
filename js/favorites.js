@@ -14,15 +14,12 @@ firebase.auth().onAuthStateChanged((user) => {
             "<p>You haven't added any favorite recipes yet.</p>";
           return;
         }
-        // Loop through each favorite and render it in the UI
         querySnapshot.forEach((doc) => {
           const recipe = doc.data();
 
-          // Create a card element for the recipe
           const recipeCard = document.createElement("div");
           recipeCard.classList.add("card");
 
-          // Use a template literal to set the card's inner HTML
           recipeCard.innerHTML = `
             <img src="${recipe.imageURL}" alt="${recipe.name}" class="card-img"/>
             <div class="card-info">
@@ -35,7 +32,6 @@ firebase.auth().onAuthStateChanged((user) => {
             window.location.href = `recipeDetails.html?recipeId=${recipe.recipeId}`;
           });
 
-          // Append the card to the container
           recipesContainer.appendChild(recipeCard);
         });
       })

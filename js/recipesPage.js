@@ -1,7 +1,6 @@
-let allRecipes = []; // Store all fetched recipes
-let filteredRecipes = []; // Store filtered recipes
+let allRecipes = [];
+let filteredRecipes = [];
 
-// Fetch and display recipes
 async function fetchRecipes() {
   const recipesContainer = document.getElementById("recipes-container");
   recipesContainer.innerHTML = "<p>Loading...</p>";
@@ -39,7 +38,6 @@ async function fetchRecipes() {
   }
 }
 
-// Generate a recipe card
 function createRecipeCard(recipe) {
   const recipeCard = document.createElement("div");
   recipeCard.classList.add("card");
@@ -51,7 +49,6 @@ function createRecipeCard(recipe) {
     </div>
   `;
 
-  // When a card is clicked, go to the details page with the recipe's id
   recipeCard.addEventListener("click", () => {
     window.location.href = `recipeDetails.html?recipeId=${recipe.id}`;
   });
