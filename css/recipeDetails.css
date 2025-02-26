@@ -34,3 +34,19 @@
   background-color: rgba(0, 0, 0, 0.668);
   color: white;
 }
+
+@media (min-width: 900px) {
+  #recipe-details {
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  #edit-form > label > textarea {
+    width: 500px;
+    height: 100px;
+  }
+}
