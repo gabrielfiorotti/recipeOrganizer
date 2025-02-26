@@ -1,16 +1,3 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyAQVcuh2XO86wlr8EnCi4-65HPRzQ76ijg",
-  authDomain: "recipeorganizer-c4bb3.firebaseapp.com",
-  projectId: "recipeorganizer-c4bb3",
-  storageBucket: "recipeorganizer-c4bb3.firebasestorage.app",
-  messagingSenderId: "22010285353",
-  appId: "1:22010285353:web:efa1bccf7aeb47faeb3b38",
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
 // Get the recipeId from the URL query parameters
 const params = new URLSearchParams(window.location.search);
 const recipeId = params.get("recipeId");
@@ -75,13 +62,19 @@ function displayRecipe(recipe) {
         </form>
       </div>
       <div class="buttons">
-        <button id="edit-btn">Edit</button>
-        <button id="delete-btn">Delete</button>
+        <button id="edit-btn" class="controlBtn">Edit</button>
+        <button id="delete-btn" class="controlBtn">Delete</button>
+        <button id="favorite-btn" class="controlBtn">Mark as Favorite</button>
       </div>
     `;
 
   // Edit button: show the edit form
   document.getElementById("edit-btn").addEventListener("click", () => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      alert("You must be signed in to edit recipes.");
+      return;
+    }
     document.getElementById("edit-form-container").style.display = "block";
   });
 
@@ -113,12 +106,19 @@ function displayRecipe(recipe) {
       })
       .catch((error) => {
         console.error("Error updating recipe:", error);
-        alert("Failed to update recipe. Please try again.");
+        alert(
+          "Failed to update recipe. Please try again. \nNote: you must be logged in to edit a recipe."
+        );
       });
   });
 
   // Delete button: confirm and delete the recipe from Firestore
   document.getElementById("delete-btn").addEventListener("click", () => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      alert("You must be signed in to delete recipes.");
+      return;
+    }
     if (
       confirm(
         "Are you sure you want to delete this recipe? This action cannot be undone."
@@ -137,5 +137,33 @@ function displayRecipe(recipe) {
           alert("Failed to delete recipe. Please try again.");
         });
     }
+  });
+
+  document.getElementById("favorite-btn").addEventListener("click", () => {
+    // Get the current user from Firebase Auth
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      alert("You must be signed in to mark favorites.");
+      return;
+    }
+
+    // Define the path for the user's favorites subcollection
+    db.collection("users")
+      .doc(user.uid)
+      .collection("favorites")
+      .doc(recipeId)
+      .set({
+        recipeId: recipeId,
+        name: recipe.name,
+        imageURL: recipe.imageURL,
+        mealType: recipe.mealType,
+      })
+      .then(() => {
+        alert("Recipe marked as favorite!");
+      })
+      .catch((error) => {
+        console.error("Error marking favorite:", error);
+        alert("Failed to mark as favorite. Please try again.");
+      });
   });
 }

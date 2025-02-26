@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Organizer</title>
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./recipesPage.css" />
   </head>
   <body>
     <header>
@@ -25,8 +25,14 @@
     </header>
     <main>
       <h2>My Favorites:</h2>
-      <div class="cards-container"></div>
+      <div id="recipes-container"></div>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
+    <script defer src="./script.js"></script>
+    <script defer src="./firebase.js"></script>
+    <script defer src="./favorites.js"></script>
     <footer>
       <p>Designed and Developed by</p>
     </footer>

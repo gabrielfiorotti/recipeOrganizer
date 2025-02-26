@@ -1,5 +1,11 @@
-#edit-btn,
-#delete-btn {
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.controlBtn {
   border: 1px solid black;
   padding: 0.5rem;
   border-radius: 8px;

@@ -63,7 +63,3 @@ form > label {
 .card-info > h2 {
   font-size: 16px;
 }
-
-.card-star {
-  cursor: pointer;
-}

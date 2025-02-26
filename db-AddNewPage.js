@@ -1,16 +1,3 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyAQVcuh2XO86wlr8EnCi4-65HPRzQ76ijg",
-  authDomain: "recipeorganizer-c4bb3.firebaseapp.com",
-  projectId: "recipeorganizer-c4bb3",
-  storageBucket: "recipeorganizer-c4bb3.firebasestorage.app",
-  messagingSenderId: "22010285353",
-  appId: "1:22010285353:web:efa1bccf7aeb47faeb3b38",
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
 //function to upload img and return a URL to the img
 async function uploadImageToImgBB(file) {
   const formData = new FormData();
