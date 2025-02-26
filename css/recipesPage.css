@@ -110,3 +110,29 @@ form > label {
   border: 1px solid black;
   border-radius: 10px;
 }
+
+@media (min-width: 460px) {
+  .card {
+    width: 21rem;
+  }
+  form {
+    justify-content: center;
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .card {
+    width: 32rem;
+    justify-content: flex-start;
+  }
+  .card-img {
+    width: 180px;
+  }
+  .card-info {
+    width: fit-content;
+  }
+  .card-info > h2 {
+    font-size: 17px;
+  }
+}
