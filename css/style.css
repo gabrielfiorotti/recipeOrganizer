@@ -1,0 +1,122 @@
+/* ============ GENERAL CSS RESET ================ */
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove text decoration on links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Reset form elements */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  /* border: none;
+  background: none; */
+}
+
+/* Ensure consistent body styles */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: bisque;
+}
+
+/* Set images to scale properly */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* =================== HEADER ===================== */
+header {
+  background-color: #ff8800;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  height: 15vh;
+}
+
+header > img {
+  max-width: 200px;
+}
+
+#btn-header {
+  cursor: pointer;
+}
+
+/* .nav-links {
+} */
+
+.closed {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  color: black;
+  position: absolute;
+}
+
+/* =================== MAIN ===================== */
+
+main {
+  min-height: 80vh;
+}
+
+/* =================== FOOTER ===================== */
+
+footer {
+  text-align: center;
+  height: 3vh;
+  background-color: #a15600;
+  color: white;
+  margin-top: 1rem;
+  overflow: hidden;
+}

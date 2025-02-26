@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Organizer</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/recipesPage.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/logo-white.svg" alt="Logo" />
+      <nav>
+        <img
+          src="./assets/icon-menu.svg"
+          alt="button to open menu"
+          id="btn-header"
+        />
+        <ul id="nav-links" class="closed">
+          <a href="./recipesPage.html"><li>Recipes</li></a>
+          <a href="./favoritesPage.html"><li>Favorites</li></a>
+          <a href="./addNewPage.html"><li>Add New</li></a>
+          <a href="./index.html"><li>Sign In</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>My Favorites:</h2>
+      <div id="recipes-container"></div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/firebase.js"></script>
+    <script defer src="./js/favorites.js"></script>
+    <footer>
+      <p>Designed and Developed by Gabriel Fiorotti</p>
+    </footer>
+  </body>
+</html>

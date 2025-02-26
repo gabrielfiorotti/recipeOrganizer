@@ -1,0 +1,45 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  align-items: center;
+  height: 75vh;
+}
+
+#recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 1rem auto;
+  justify-content: center;
+  width: 15rem;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+#recipe-form > label {
+  color: black;
+}
+
+#recipe-form > label > input,
+select,
+textarea {
+  display: block;
+}
+
+#recipe-form > button {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #ffb868;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+#recipe-form > button:hover {
+  opacity: 80%;
+}

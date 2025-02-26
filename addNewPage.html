@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Organizer</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/addNew.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/logo-white.svg" alt="Logo" />
+      <nav>
+        <img
+          src="./assets/icon-menu.svg"
+          alt="button to open menu"
+          id="btn-header"
+        />
+        <ul id="nav-links" class="closed">
+          <a href="./recipesPage.html"><li>Recipes</li></a>
+          <a href="./favoritesPage.html"><li>Favorites</li></a>
+          <a href="./addNewPage.html"><li>Add New</li></a>
+          <a href="./index.html"><li>Sign In</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="page-container">
+        <h2>Add a new recipe:</h2>
+        <form id="recipe-form">
+          <label
+            >Recipe Name:
+            <input type="text" id="recipe-name" required />
+          </label>
+
+          <label>
+            Meal Type:
+            <select id="mealType" required>
+              <option disabled selected>--Select--</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Snack">Snack</option>
+            </select>
+          </label>
+
+          <label>
+            Ingredients:
+            <textarea id="ingredients" required></textarea>
+          </label>
+
+          <label>
+            Instructions:
+            <textarea id="instructions" required></textarea>
+          </label>
+
+          <label>
+            Photo:
+            <input type="file" id="recipe-image" accept="image/*" required />
+          </label>
+          <button type="submit">Submit Recipe</button>
+        </form>
+      </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/firebase.js"></script>
+    <script defer src="./js/addNewPage.js"></script>
+    <footer>
+      <p>Designed and Developed by Gabriel Fiorotti</p>
+    </footer>
+  </body>
+</html>

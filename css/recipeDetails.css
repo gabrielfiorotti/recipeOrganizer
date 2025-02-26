@@ -1,0 +1,36 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.controlBtn {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #ffb868;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+#edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-form > label {
+  color: black;
+}
+
+#edit-form > button {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.668);
+  color: white;
+}
